@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-boot-blueprint-base
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5455/blueprint
+    username: user
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:db/changelog/changelog-master.xml
+    enabled: true

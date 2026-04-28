@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: BP
+    ports:
+      - "5455:5432"  # Our app uses the left port
+    restart: always
+    environment:
+      # If you change any of these, you have update the application.yaml also
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: blueprint
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
