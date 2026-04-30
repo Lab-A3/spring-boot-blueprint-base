@@ -14,3 +14,8 @@ spring:
   liquibase:
     change-log: classpath:db/changelog/changelog-master.xml
     enabled: true
+  jwt:
+    # After working with Auth, then create the (.evn) file and add a secret key {JWT_SECRET=secret}
+    secret: {JWT_SECRET}
+    accessTokenExpiration: 900 # 15 minutes
+    refreshTokenExpiration: 86400 # 1 day
